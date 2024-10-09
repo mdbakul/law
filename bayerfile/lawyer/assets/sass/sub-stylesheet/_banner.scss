@@ -1,0 +1,259 @@
+// banner common style
+.banner {    
+    background-image: url("..//..//img/home-1/banner/bg.jpg");
+    @extend %bg-cover, %bg-no-repeat;
+    
+    &__area {
+        @include padding(180px 0);
+
+        @include breakpoint(xxl) {
+            @include padding(230px 0);
+        }
+
+        @extend %bg-cover;
+        background-position:center;
+        .leftimg{
+            @extend %abs, %bottom-0;
+            left: 1%;
+            img{
+                width: 80%;
+                animation: mymove 5s infinite;
+                position: relative;
+                @extend %transition;
+            }
+           @include breakpoint(md){
+            @keyframes mymove {
+                0%{
+                    bottom: 0;
+                }
+                50%{
+                    bottom: 50px;
+                }                
+                100%{
+                    bottom: -10px;
+                }
+            }
+           }
+        }
+        .rightimg {
+            @extend %abs,
+            %bottom-0;
+            right: 15px;
+            @include breakpoint(max-xxxxl) {
+                right: -300px;
+            }       
+
+            img {
+                @extend %w-100;
+                @include breakpoint(max-xxxxl) {
+                    width: 80%;
+                }
+            }
+
+        }
+        &--areapage2{
+           .rightimg{
+            @include breakpoint(max-xxxxl) {
+                right: -100px;
+            } 
+            img{
+                @include breakpoint(max-xxxxl) {
+                    width: 90%;
+                } 
+            }  
+           } 
+        }
+    }
+
+    &__content {
+        h4,      
+        h3 { 
+            @include line-height(80px);
+            @include font-size(60px);
+            @include breakpoint(lg){
+            @include font-size(72px);
+            }
+            margin-bottom: 15px;
+            @extend %text-400, %title-color, %font1;
+            span{
+                @extend %text-800, %title-color, %font1;
+                @include font-size(70px);  
+                &.word{
+                    animation: Color 4s linear infinite;   
+                }            
+            }
+            @keyframes Color{
+                0%{
+                    color:#E2B577;
+                }
+                
+                40%{
+                  color:#FFCE54;
+                }
+                
+                60%{
+                  color:#FC6E51;
+                }
+                
+                80%{
+                  color:#E2B577;
+                }
+                
+                100%{
+                    color:#E2B577;
+                }
+            }           
+            
+        }
+
+        h4{            
+            span{                 
+                @include line-height(70px); 
+                &.textani{
+                    background: linear-gradient(to right,#0B2239 70%, #FFCE54 100%);
+                    background-size: auto auto;
+                    background-clip: border-box;
+                    background-size: 200% auto;
+                    color: #fff;
+                    background-clip: text;
+                    text-fill-color: transparent;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    animation: textani 1.5s linear infinite;
+                    display: inline-block;
+                }
+                @keyframes textani {
+                    0% {
+                        background-position: 200% center;
+                    }
+
+                }
+            }
+            
+        }
+
+
+        p {
+            @extend %d-inline-block,
+            %mb-0;
+            @include line-height(26px);
+            max-width: 535px;
+        }
+
+        &--contentp2 {
+            @extend %text-center-im;
+
+            p {
+                max-width: 692px;
+                @extend %auto;
+            }
+        }
+
+        &--content3 {
+            @extend %text-left-im;
+            h3{
+                @include font-size(55px);
+                @include breakpoint(sm){
+                @include font-size(60px);
+                }
+                @include line-height(70px);
+                @include breakpoint(md){
+                    @include font-size(70px);
+
+                }
+                @include breakpoint(xl){
+                    @include breakpoint(max-lxxl){
+                        @include font-size(55px);
+                        max-width: 650px;
+                        
+                    }
+
+                }
+                @include breakpoint(max-esm){
+                    @include font-size(50px);
+                }
+            }
+
+            p {
+                max-width: 692px;
+                @include breakpoint(xl){
+                    @include breakpoint(max-lxxl){
+                        
+                        max-width: 650px;
+                        
+                    }
+
+                }
+
+            }
+        }
+
+        &--contentP4 {
+            h3 {
+                @include breakpoint(lg) {
+                    @include breakpoint(max-lxxl) {
+                        @include font-size(60px);
+                        max-width: 600px;
+                        @include line-height(65px);
+                    }
+                }
+            }
+
+            p {
+                @include breakpoint(lg) {
+                    @include breakpoint(max-lxxl) {
+                        max-width: 550px;
+                    }
+                }
+            }
+        }
+
+        &--contentP5 {
+            p {
+                max-width: 642px;
+            }
+        }
+    }
+
+    &__btn {
+        margin-top: 45px;         
+        &--btnP2 {
+            @extend %justify-center-im;
+        }
+    }      
+}
+
+
+// banner pagination position here
+.banner {
+    @extend %p-rel;
+    &__pre {
+        @extend %d-none;
+
+        @include breakpoint(xxxxl) {
+            display: inherit;
+        }
+
+        left: 3% !important;
+        @extend %abs,
+        %white-color,
+        %top-50-im;
+        @include transform(translateY(-50%));
+    }
+
+    &__next {
+        @extend %d-none;
+
+        @include breakpoint(xxxxl) {
+            display: inherit;
+        }
+
+        right: 3% !important;
+        @extend %abs,
+        %white-color,
+        %top-50-im;
+        @include transform(translateY(-50%));
+    }
+
+}
+

@@ -1,0 +1,300 @@
+.testmonial{
+   background-image: url("..//..//img/home-1/testimonial/bgimg.jpg"); 
+   @extend %bg-cover, %bg-no-repeat;
+   @include padding(110px 0 120px 0);
+
+    &__leftpart{
+        @extend %hidden;
+        @include breakpoint(lg){
+        max-width: 400px;
+        }
+        @include breakpoint(xl){
+        max-width: 590px;
+        }
+        img{
+          @extend %w-100;  
+        }
+    }
+    &__item{
+        @include padding(30px);
+        @include breakpoint(xl){
+        @include padding(70px 30px);
+        }
+        @include breakpoint(xxl){
+        @include padding(70px 80px);
+        }
+        @include breakpoint(lg){
+         @include border-radius(0 10px 10px 0); 
+        } 
+        
+        .quode{          
+          @include margin-bottom(20px); 
+          @include breakpoint(xl){
+          @include margin-bottom(25px);
+
+          }
+          img{
+            @include breakpoint(max-xl){
+                width: 40px;
+                height: 30px;
+            }
+          }
+        }  
+        p{
+            max-width: 500px;
+        } 
+        .customerprofile{
+            @extend %flex, %align-items-center;
+            gap: 15px;
+            @include margin-top(20px); 
+            @include breakpoint(xl){
+             @include margin-top(45px); 
+            }      
+            .img{
+                @extend %wd-60, %hd-60;
+                img{
+                    @extend %w-100;
+                }
+            }
+            .name{
+                h6{
+                @extend %mb-5; 
+                }            
+
+                
+            }
+        }
+        &--itempage2{
+            box-shadow: none;
+            @include padding(0px);
+            .customerprofile{
+                .name{
+                    .allstar{
+                        ul{
+                            @extend %flex;
+                            gap: 8px;
+                            li{
+                                i{
+                                    @extend %theme;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &__wrapper{
+        @include breakpoint(lg){
+        height: 290px;
+
+        }
+        @include breakpoint(xl){
+        height: 424px;
+        }
+        @extend %hidden, %p-rel, %flex;
+        @include breakpoint(lg){
+            align-items: center;
+        }
+        @include breakpoint(max-lg){
+            flex-direction:column;
+        }
+    }
+    &__rightpart{
+        @include breakpoint(lg){
+        width: calc(100% - 400px);
+        }
+        @include breakpoint(xl){
+        width: calc(100% - 590px);
+        }
+    }
+
+    &__pagination{    
+        @extend %d-none;   
+        @include breakpoint(md){
+            display: inherit;
+        }
+        z-index: 9999;
+        top: 70% !important;
+        @include breakpoint(lg){
+        top: 50% !important;
+        }
+        left: 90% !important;
+        @include breakpoint(lg){
+        left: 96% !important;
+        }
+        @include breakpoint(xxl){
+         left: 92% !important;
+
+        }
+        transform: translateY(-50%) !important;
+        width: 100px;
+        height: 100px;
+        .swiper-pagination-bullet{                
+            border: 1.5px solid #fff;                
+            @extend %p-rel, %opacity-1, %wd-20-im, %hd-20-im, %bgtransprant, %line-height-20;
+            &:after{
+                @extend %abs, %top-50, %left-50, %text-center-im;
+                width: 8px;
+                height: 8px;
+                line-height: 8px;
+                @include border-radius(50%); 
+                transform: translate(-50%, -50%); 
+               
+                
+                background-color: #C4C4C4;
+            }               
+
+        }
+        .swiper-pagination-bullet-active{
+            border: 1.5px solid $maintheme !important;
+                &:after{
+                    @extend %bgtheme;
+                }
+        }
+     }
+    &__header{
+        @extend %text-center;
+        h3{
+            @include line-height(48px);
+        }
+    }
+
+
+    //  page two start here
+
+    &--testmonial2{
+        @include padding(100px 0);
+        @extend %p-rel;
+    }
+
+   &__headerpage2{
+    h6{
+        @extend %text-left;
+    }
+   }
+
+   &__rightimgpage2{
+     @extend %abs, %bottom-0;
+     img{
+        @include breakpoint(max-lg){
+            width: 55%;
+        }
+     }
+     left: 50%;
+     @include breakpoint(lg){
+        left: 47%;
+
+     }
+     @include breakpoint(xl){
+      left: 52%; 
+     } 
+    }
+
+    &__pre{
+        @include breakpoint(max-sm){
+            visibility: hidden;
+            opacity: 0;
+        }
+        @extend %abs;
+        left: 50% !important;
+        @include breakpoint(lg){
+        left: 47% !important;
+        }
+        top: 80%;
+        width: 40px;
+        height: 40px;
+        @extend %bgtheme, %transition;
+        @include border-radius(3px);
+        &:after{
+           @include font-size(20px); 
+        }
+        &:hover{
+            @extend %bg1; 
+            &:after{
+                @extend %theme;  
+            }
+        }
+    } 
+    &__next{
+        @include breakpoint(max-sm){
+            visibility: hidden;
+            opacity: 0;
+        }
+        @extend %abs;
+        top: 80%;
+        left: 60% !important; 
+        @include breakpoint(lg){
+        left: 50% !important;
+        }
+        width: 40px;
+        height: 40px;
+        @extend %bgtheme, %transition;
+        @include border-radius(3px);
+        &:after{
+            @include font-size(20px); 
+        }
+        &:hover{
+            @extend %bg1; 
+            &:after{
+              @extend %theme;  
+            }
+        }
+        
+    }
+
+}
+
+.testmonial3{
+    &__content{
+        @extend %bg1;
+        @include padding(30px 20px);
+        .profile{
+            @extend %flex, %align-items-center, %justify-between;            
+           .name{
+            h6{
+                @extend %white-color, %mb-5;
+            }
+            span{
+                @extend %white-color;
+            }
+           } 
+           .quode{
+            i{
+                @extend %theme;
+                @include font-size(40px);
+            }
+           }
+        }
+        .text{
+            @include margin-top(20px);
+            @include padding-top(20px);
+            border-top: 1px solid #fff;
+            p{
+             @extend %white-color;
+            }
+        }
+        @extend %p-rel;
+        &:after{
+            @extend %abs, %bg1;
+            top: calc(100% + -21px);
+            left: 10px;
+            width: 20px;  
+            height: 30px;
+            transform: rotate(52deg);         
+        }
+        &:before{
+            @extend %abs, %top-100, %left-0, %bg1;
+            width: 15px;
+            height: 11px;
+        }
+    }
+    &__customerimg{
+        @extend %wd-70, %hd-70;
+        @include border-radius(35px);
+        @include margin-top(30px);
+        img{
+            @extend %w-100;
+        }
+    }
+}

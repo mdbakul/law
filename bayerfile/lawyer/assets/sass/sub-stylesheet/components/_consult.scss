@@ -1,0 +1,117 @@
+.consultadvise{
+    background-image: url("..//..//img/home-1/consult/mainbg.jpg");
+    @include padding-block(120px);
+    @extend %bg-no-repeat, %bg-cover, %p-rel, %bg-position-center;
+    @include breakpoint(max-xl){
+        overflow: hidden;
+    }
+    &__rightimg{
+        @extend %d-none;
+        @include breakpoint(xl){
+        display: inherit;
+        }
+        @extend %abs, %bottom-0;        
+        right: 5%; 
+        @include breakpoint(xxl){
+        right: 10%;
+
+        }
+
+        img{
+            width: 60%;
+            @include breakpoint(lg){
+                width: 78%;
+            }
+            @include breakpoint(xl){
+            width: 97%;
+            }
+        }
+    }
+    &__item{
+     @include margin-top(60px);
+    }
+    &__inner{
+        @extend %flex, %align-items-center;
+        gap: 20px;
+        &:first-child{
+        @include margin-bottom(40px);
+        }
+        .thum{
+        @extend %wd-55, %hd-55, %bgtheme, %text-center, %border-radius-4;        
+        line-height: 55px;
+        }
+        
+    }
+    &__content{
+        p{
+        @extend %text-color, %text-700, %text-capitalize;            
+        }
+        span{
+         @extend %text-color, %font-16, %text-500;            
+        }
+    }
+    &__header{
+       h2{
+        @extend %text-400;
+       }
+        h3{
+            @extend %text-left;
+        }
+        p{
+            @extend %text-left;
+            @include margin-top(20px);
+
+        }
+    }
+    &__rightinner{ 
+        @include breakpoint(max-lg){
+        @include margin-top(60px);
+        }                         
+        @include breakpoint(lg){
+        max-width: 380px;
+        }
+        box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.05);         
+        @include padding(50px 30px);      
+        @include border-radius(6px);         
+        form{
+            h6{                
+                @include margin-bottom(25px);
+                @include breakpoint(lg){
+                max-width: 280px;
+                }
+            }
+            .allinput{
+                @extend %flex;
+                gap:20px;                
+                input{                    
+                    width: 100%;   
+                    background-color: #F5F5F5;
+                    @include padding(12px 20px); 
+                    @extend %pcolor;
+                }
+                select {
+                    background-color: #F5F5F5;                    
+                    outline: none !important;
+                    border: none !important;
+                    option {
+                       @include padding(12px 20px);                        
+                    }
+                    @extend %text-capitalize, %text-400,%pcolor;                    
+
+                }
+                ::placeholder{                     
+                    @extend %text-400, %pcolor;
+                }                
+            }            
+            button{
+                @extend %ob-none;
+                @include margin-top(40px);
+                @include breakpoint(max-lg){
+                    width: 100%;
+                }
+            }        
+            
+        }
+    }
+}
+

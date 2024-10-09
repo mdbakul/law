@@ -1,0 +1,87 @@
+.case{
+    background-image: url("..//..//img/home-1/receent-case/bgimg.jpg");
+    @include padding(115px 0 120px 0);
+    @extend %p-rel;
+
+    &__header{
+        @include margin-bottom(50px);
+        
+        h6{
+            @extend %text-left;
+        }
+       p{
+        max-width: 465px;
+       } 
+    }
+    &__item{
+        @extend %p-rel, %border-3, %border-radius-4;
+        .thum{
+            img{
+             @extend %w-100;
+            }
+        }
+        .text{
+            @extend %abs, %w-100, %left-50;
+            bottom: 30px;
+            transform: translateX(-50%);
+            p{
+                @extend %text-500, %text-center, %white-color;
+            }
+            h5{ 
+                @extend %text-center;           
+                a{
+                    @extend %text-500, %font1, %white-color;
+                }
+            }
+        }
+    }    
+    &__pre{
+        @include breakpoint(max-md){
+            visibility: hidden;
+            opacity: 0;
+        }
+        @extend %abs;
+        left: 79% !important;
+        top: 20%;
+        width: 40px;
+        height: 40px;
+        @include border-radius(3px);
+        @extend %bgtheme, %transition;
+        &:after{
+           @include font-size(20px); 
+        }
+        &:hover{
+            @extend %bg-white; 
+            &:after{
+                @extend %theme;  
+            }
+        }
+    } 
+    &__next{
+        @include breakpoint(max-md){
+            visibility: hidden;
+            opacity: 0;
+        }
+        @extend %abs;
+        @include border-radius(3px);
+        top: 20%;
+        left: 85% !important; 
+        @include breakpoint(xxxxl){
+         left: 82% !important; 
+        }
+        width: 40px;
+        height: 40px;
+        @extend %bgtheme, %transition;
+        &:after{
+            @include font-size(20px); 
+        }
+        &:hover{
+            @extend %bg-white; 
+            &:after{
+              @extend %theme;  
+            }
+        }
+        
+    }
+}
+

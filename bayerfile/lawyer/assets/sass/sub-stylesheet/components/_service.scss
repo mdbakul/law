@@ -1,0 +1,195 @@
+.service{
+    background-image: url("..//..//img/home-1/service/bg.jpg");
+    @extend %bg-cover, %bg-no-repeat;       
+    @include padding(110px 0 90px 0);
+
+    &__header{
+        @include margin-bottom(45px);
+        @extend %text-center;
+        p{
+            max-width: 457px;
+            @extend %auto;
+        }
+    }
+
+    &__fullpart{
+        @extend %flex,%align-items-center;         
+              
+           
+    }
+    &__leftpart{         
+        @extend %d-none;
+        @include breakpoint(lxxl){
+         width: calc(100% - 55%);
+         display: inherit;
+        }
+        border: 3px solid #E2B577; 
+        @include border-radius(6px 0px 0 6px);
+        border-right: none;
+        img{
+            @extend %w-100;
+        }
+    }
+    &__rightpart{    
+        width: 100%;         
+       @include breakpoint(lxxl){
+        width: 55%; 
+       }       
+        @include border-radius(6px);
+        @extend %bg1, %border-3;
+        @include padding(40px 30px);
+        
+        @include breakpoint(lg){
+            @include breakpoint(max-xl){
+                 @include padding(40px 22px);
+            }
+        }
+       .icon{
+        @include margin-bottom(25px);          
+        
+       } 
+       .text{
+        h4{
+            @extend %white-color, %font1;
+            @include margin-bottom(17px);
+            @include breakpoint(max-lxxl){
+            @include font-size(25px);
+            }
+        }
+        p{
+            @extend %white-color;
+            max-width: 366px;
+        }
+        ul{
+            @include margin-top(25px);
+            li{
+                @extend %white-color;
+                @include margin-bottom(25px);
+                i{
+                @extend %mr-10;                    
+                }
+                span{
+                    @extend %white-color, %text-700;
+                } 
+                &:last-child{
+                    @extend %mb-0;
+                }
+            }
+        }
+        a{
+            @extend %white-color, %text-700, %text-capitalize, %d-inline-block;
+            @include margin-top(50px);
+        }
+       }
+    } 
+    &__pagination{
+        @extend %auto, %mt-30, %p-rel, %wd-100, %hd-30, %text-center;        
+        .swiper-pagination-current{
+            @extend %theme, %text-700;
+            @include font-size(20px);
+        }
+        .swiper-pagination-total{
+            @extend %pt-30;
+            @extend %text-700;
+            @include font-size(15px);
+        }
+        // &:after{
+        //     @extend %abs, %w-100, %h-100;
+        //     content: "\f715";
+        //     top: 0;
+        //     left: 0;
+        //     font-family: "Font Awesome 6 Free";
+
+        // }
+    }     
+    
+}
+
+// team new style start here
+.servicepage2{
+    @extend %bg1;      
+    &__inner{
+        @extend %flex;
+        .thumb{
+            @extend %w-100, %hidden;
+            @include breakpoint(xl){
+                max-width: 312px;
+            }
+            @include breakpoint(max-xl){               
+               max-height: 320px;
+            }
+            img{
+                @extend %w-100, %h-100, %transition;
+                @include border-radius(4px 4px 0 0);
+                @include breakpoint(xl){
+                 @include border-radius(4px 0  0 4px);
+                }
+            }
+        }
+        .content{
+            @include breakpoint(xl){
+                width: calc(100% - 312px);
+            }
+            @extend %bg-white;
+            @include padding(30px 25px);
+            @include border-radius(0 0 4px 4px); 
+
+            @include breakpoint(xl){
+             @include border-radius(0 4px 4px 0);  
+            }
+            .icon{
+               @extend %wd-80, %hd-80, %bgtheme, %line-height-80, %text-center, %transition2;
+               @include border-radius(40px); 
+               @include margin-bottom(40px);
+            }          
+            .name{
+                @extend %mb-15;
+                h6{
+                    @extend  %text-capitalize;                    
+                }                
+            }                 
+                         
+
+         a{
+                @extend %text-capitalize, %d-inline-block, %text-700, %title-color;
+                @include margin-top(30px);
+
+            }        
+        }
+        &:hover{
+            .thumb{
+                img{
+                    transform: scale(1.1);
+                }
+            }
+            .icon{
+             transform: rotateY(180deg);                   
+                
+            }
+            .name{
+                h6{
+                    @extend %theme;
+                }
+            }            
+            a{
+                @extend %theme;
+
+            }
+        }       
+        
+    }
+    &__header{
+        @extend %text-center;
+        p{
+            max-width: 457px;
+            @extend %auto;
+        }
+    }
+    &__btn{
+        @extend %text-center;
+        @include margin-top(60px);
+        a{
+
+        }
+    }
+}

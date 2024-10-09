@@ -1,0 +1,112 @@
+.portfolio{
+    
+    &__header {
+        @include margin-bottom(40px);
+        ul {
+            @extend %flex,
+            %justify-center,
+            %align-items-center;
+            gap: 20px;
+            li {
+                background: #FFF8EF;
+                @include padding(10px 15px);
+    
+                @include breakpoint(sm) {
+                    @include padding(10px 30px);
+                }
+    
+                @include border-radius(4px);
+                @extend %text-600,
+                %text-color,
+                %pointer, %text-capitalize;
+                &.active {
+                    @extend %bgtheme,
+                    %white-color;
+                }
+            }
+        }
+    }
+    &__inner{
+        img{
+            @extend %w-100;
+        }
+        @extend %p-rel;
+        &:after{
+        @extend %abs, %top-0, %left-0,%w-100, %h-100;
+        @extend %bgtheme, %transition;
+        opacity: 0.4;
+        transform: scaleX(0);                   
+        }
+        .icon{
+            @extend %abs, %top-50, %left-50, %transition;
+            transform: translate(-50%, -50%) scaleY(0);
+            a{
+                @extend %wd-40, %hd-40, %bg-white,%text-center, %d-inline-block, %line-height-40, %p-rel;
+    
+                i{
+                    @extend %theme;
+                    @include font-size(18px);
+                }  
+                &:hover{
+                  @include border-radius(20px);  
+                }                         
+            }
+        }
+        &:hover{
+           &:after{
+            transform: scaleX(1);
+           } 
+           .icon{
+            @extend %transition;
+            transform: translate(-50%, -50%) scaleY(1);
+           }
+        }
+    }  
+    &__btn{
+        @extend %text-center;
+        @include margin-top(50px);
+        a{
+          padding-inline: 3rem; 
+        } 
+        
+    }     
+    &__masitem{
+      // @extend %p-rel;       
+      overflow: hidden;
+      
+      .thumb{
+        .img{
+          @extend %w-100;
+        }
+      }
+      
+      .link{
+        @extend %abs, %top-50,%left-50, %transition;
+        transform: translate(-50%, -50%) scale(0);
+
+        a{
+          @extend %wd-50, %hd-50,%line-height-50, %bg-white, %d-inline-block, %text-center;
+          @include border-radius(25px);
+          img{
+            width: 20px;
+            height: 20px;
+          }
+        }
+      }
+      &:after{
+        @extend %abs, %top-0, %left-0, %w-100, %h-100;
+        @extend %bgtheme, %transition;
+        opacity: 0.4;
+        transform:scaleX(0);
+      }
+      &:hover{
+        .link{
+          transform: translate(-50%, -50%) scale(1);
+        }
+        &:after{
+          transform: scaleX(1);
+        }
+      }
+    }
+}
+

@@ -1,0 +1,208 @@
+.footer {
+    background: url("..//..//img/home-1/footer/mainbg.jpg");
+   
+    @extend %bg-no-repeat,
+    %bg-cover;
+    
+    &__topcontentinner{
+        @extend %pt-15;
+        .allcontent{
+            @extend %flex,%align-items-center,%justify-between; 
+            gap: 20px;
+            .item{
+                @extend %flex,%align-items-center;     
+                background: rgba(255, 255, 255, 0.05);
+                @include breakpoint(lg){
+                @include breakpoint(max-xl){
+                flex-direction: column;
+                align-items: flex-start;
+                }                
+            }
+                width: 100%; 
+                @include breakpoint(md){
+                 width: calc(100% / 2 - 20px);
+                }
+                @include breakpoint(lg){
+                 width: calc(100% / 3 - 20px);
+
+                }
+
+                @include padding(30px 15px);
+                @include breakpoint(xl){
+                @include padding(15px 30px); 
+                }               
+                gap: 15px; 
+                &:last-child{
+                    @extend %mr-0;
+                }            
+                .text{
+                    p{
+                        @extend %white-color, %text-400, %mb-5;
+                    }
+                    h6{
+                        @extend %white-color, %mainfont;
+                        @include font-size(18px);
+                    }
+                }
+            }
+        }
+    }
+
+    &__maincontent{
+        @include margin-block(100px);               
+    }
+
+    &__aboutcompnay {  
+        .content {
+            p {
+                @extend %white-color;
+                @include breakpoint(sm){
+                max-width: 270px;
+                }
+            }
+            .allicon {
+                @include margin-top(30px);
+                ul {
+                    @extend %flex;
+                    gap: 8px;
+                    li {
+                        a{                        
+                        @extend %wd-40,
+                        %hd-40,
+                        %border-radius-4, %d-inline-block,
+                        %text-center, %transition, %bgtheme, %line-height-40;                        
+                        @include border-radius(20px);
+                        i {
+                            @extend %white-color,
+                            %transition;
+                        }
+                        &:hover{
+                        @include border-radius(0px); 
+                        }
+                       }                        
+                    }
+                }
+            }
+        }
+
+    }
+
+    &__working {
+        max-width: 240px;
+        margin-right: auto;
+        @include breakpoint(sm){
+         margin: auto;            
+        }
+        @include breakpoint(xl) {           
+        margin-left: auto;
+        }
+        .content {
+            ul {
+                li {
+                    @extend %flex, %align-items-center;
+                    @include margin-bottom(20px);
+                   i{
+                    @extend %white-color;
+                    width: 15px;
+                   }
+                   .text{
+                    @extend %flex, %justify-between;
+                   width: calc(100% - 15px);
+                   padding-left: 10px;                   
+                    p{
+                        @extend %white-color, %text-400;
+                    }
+                    span{
+                        @extend %white-color, %text-400;
+                    }
+                   }
+                }
+            }
+        }
+    }
+
+    &__usefullink{
+        @include breakpoint(lg) {
+            max-width: 234px;
+            margin: auto;
+        }
+        ul {
+            @extend %flex;
+            flex-direction: column;
+            gap: 17px;
+            li { 
+                a{
+                    @extend %text-400, %text-capitalize, %white-color;
+                    i{
+                        @extend %white-color, %mr-15;
+                    }
+                     &:hover{                    
+                         @extend %theme-im;
+                           i{
+                            @extend %theme-im;
+                        }
+                        
+                    }
+                }                
+            }
+        }
+    }
+
+    &__ppost {
+        @include breakpoint(sm){
+         max-width: 275px;
+        }
+        @include breakpoint(lg){
+            margin: auto;
+        }
+              
+        ul {
+            li {
+                @extend %flex;
+                .leftimg {
+                    @extend %wd-80,
+                    %border-radius-4;
+                    img {
+                        @extend %w-100,
+                        %border-radius-4;
+                    }
+                }
+                .righttext {
+                    width: calc(100% - 80px);                   
+                    @extend %pl-20;
+                    h6{                                                 
+                    a {
+                        @extend %white-color,                    
+                        %text-capitalize,                        
+                        %d-inline-block,
+                        %pointer,
+                        %text-clamp-2;
+                        @include font-size(16px); 
+                        @include line-height(23px); 
+                        @extend %mb-5;                       
+                        @include breakpoint(sm){
+                             max-width: 175px; 
+                        }  
+                        &:hover {
+                            @extend %theme;
+                        }
+                    }
+                    }
+                    span {
+                        @extend %white-color,
+                        %d-block, %text-400;
+                        i{
+                           @extend %theme;
+                           @include margin-right(5px); 
+                        }
+                    }
+                }
+                &:first-child {
+                    @extend %mb-20, %pb-20;
+                    border-bottom: 0.3px solid #fff6                    
+                }
+            }
+        }
+    }
+}
+

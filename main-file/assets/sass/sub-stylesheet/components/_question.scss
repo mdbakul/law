@@ -1,0 +1,266 @@
+.question {
+  @extend %bg1;
+  
+  &__header {
+    @include margin-bottom(60px);
+    h2{
+        @extend %text-400, %white-color, %mb-10;
+        @include line-height(40px);
+    }
+    h3{
+      @include font-size(40px);      
+    }
+    p{
+      max-width: 473px;
+      @include margin-top(15px);
+    }
+
+    
+  }
+
+  &__leftinner{
+    @include breakpoint(lg){
+      max-width: 585px;
+    }
+    img{
+      @extend %w-100;
+      @include border-radius(10px);
+    }
+  }  
+
+  .row{
+    @include breakpoint(max-lg){
+      flex-direction: column-reverse;
+    }
+  }
+
+}
+
+.accordion-item {  
+  @extend %mb-20, %border-none-im;   
+  @include add-prefix(border-radius, 4px);
+  background: #F7F7F7;
+
+  @include breakpoint(xl) {
+    max-width: 593px;
+  }  
+  @include padding(20px 30px); 
+
+  .accordion-button {
+    @extend %p-0,
+    %mb-0,
+    %text-600,
+    %bgtransprant,
+    %text-color,
+    %font1,
+    %justify-between-im, %pointer, %text-capitalize;  
+
+    .plus-icon {
+      @extend %wd-40,
+      %hd-40,
+      %bg1,
+      %border-radius-4,
+      %p-rel,
+      %transition;
+      margin-left: auto;
+
+      &:active {
+        @extend %bgtheme;
+      }
+
+      &:after {
+        @extend %abs,
+        %top-50,
+        %left-50;
+        width: 14px;
+        height: 2px;
+        @extend %bg-white;
+        transform: translate(-50%, -50%);
+      }
+
+      &:before {
+        @extend %abs,
+        %top-50,
+        %left-50;
+        width: 2px;
+        height: 14px;
+        @extend %bg-white;
+        transform: translate(-50%, -50%);
+      }
+
+    }
+
+    &:after {
+      @extend %d-none;
+    }
+
+    @include font-size(22px);
+
+    &:focus {
+      border-color: none;
+      box-shadow: none;
+    }
+
+  }
+
+  .accordion-body {
+    @extend %p-10;
+    p {
+      @extend %mp-0,
+      %text-500;
+      max-width: 432px;
+      color: #555;
+
+    }
+  }
+
+  .accordion-button:not(.collapsed) {
+    box-shadow: none;
+    @extend %transition,
+    %theme;
+    border-radius: inherit !important;
+
+    .plus-icon {
+      @extend %bgtheme,
+      %transition;
+
+      &:before {
+        width: 14px;
+        height: 2px;
+      }
+
+    }
+  }
+
+  &--itme2Serpage {
+    @include breakpoint(xl){
+      max-width: 550px;
+
+    }
+    @extend %bg1,
+    %p-0-im;
+    .accordion-button {
+      @extend %white-color;
+      @include padding(10px 20px);
+      .plus-icon {
+        @extend %bg-white-color-im;
+        &:after {
+          @extend %bgtheme;
+        }
+        &:before {
+          @extend %bgtheme;
+        }
+      }
+    }
+    .accordion-body {
+      @extend %bg-white;
+      @include padding(20px 30px);
+      p{
+        max-width: 475px;
+      }
+    }
+    .accordion-button:not(.collapsed) {
+      @extend %transition,
+      %white-color-im, %bgtheme;
+      .plus-icon {
+        @extend %transition,
+        %bg-white-color-im;
+
+      }
+    }
+
+  }
+
+  &--itemserviceP {
+    max-width: 872px;    
+    @include padding(20px);
+    @include breakpoint(md){
+      @include padding(20px 40px);
+
+    }
+    .accordion-button{       
+      .left{
+        @extend %flex, %align-items-center;
+        gap: 20px;
+        .questionmark{
+          @extend %wd-40, %hd-40, %bg1, %text-center, %transition; 
+          line-height: 37px;
+
+          @include breakpoint(lg){
+            @include breakpoint(max-xl){
+              display:  none !important;
+            }
+          }
+
+
+          @include border-radius(25px);
+          i{
+            @extend %white-color, %wd-20, %hd-20, %line-height-20;
+            border: 1px solid #fff;
+            @include border-radius(10px);
+            @include font-size(12px);  
+          }
+        }
+      }     
+
+       .plus{
+        @extend %p-rel;
+          &:after{
+            width: 14px;
+            height: 2px;
+            @extend %bgtheme, %abs, %top-0, %left-0, %w-50, %h-50;
+            transform: translate(-50%, -50%);
+          }
+          &::before{
+            width: 2px;
+            height: 14px;
+            @extend %bgtheme, %abs, %top-0, %left-0, %w-50, %h-50;
+            transform: translate(-50%, -50%);
+            
+          }
+       }   
+    }
+    .accordion-body{
+      @include breakpoint(sm){
+        @include padding(10px 0px 0px 70px);
+        
+      }
+      @include breakpoint(lg){
+        @include breakpoint(max-xl){
+          @include padding(10px 0px 0px 0px);
+        }
+      }
+
+      p{
+        max-width: 632px;
+      }
+    }
+    .accordion-button:not(.collapsed){
+      .questionmark{
+        @extend %bgtheme, %transition;
+      }
+      .plus{
+        &::before{
+          width: 14px;
+          height: 2px;
+          
+        }
+      }
+    }
+  }
+  &--faqpage{
+    max-width: inherit !important;
+    @include breakpoint(max-md){
+      @include padding(20px);
+    }
+    .accordion-button{
+
+       @include breakpoint(max-sm){
+        @include font-size(20px);
+       }  
+      
+    }
+  } 
+}
+
+

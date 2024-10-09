@@ -1,0 +1,137 @@
+.feture-about{
+ background-image: url("..//..//img/home-1/about/bg.jpg");
+ @extend %bg-cover, %bg-no-repeat;
+ @include padding(120px 0 110px 0);
+
+}
+
+.feture{    
+    @include breakpoint(lg){
+    @include margin-top(-210px);
+    }
+    z-index: 999;
+    @extend %p-rel;    
+    &__inner{       
+        @include padding(45px 25px);               
+        @extend %p-rel;
+        z-index: 10;        
+        box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.2);
+        .icon{
+            @extend %wd-80, %hd-80, %line-height-80, %auto, %bgtheme, %text-center;
+            @include border-radius(40px);     
+            img{
+                @include transition(0.7s);              
+                
+            }                           
+        }
+        .text{   
+            @include margin-top(20px);         
+            h6{
+             @extend %text-capitalize, %text-center, %transition;
+             @include margin-bottom(15px);
+            }
+            p{
+            @extend %text-center, %transition; 
+            @include breakpoint(md){
+                @include breakpoint(max-xl){
+                    max-width: 256px;
+                    margin: auto;
+                }
+            }
+            }
+        }
+        &:after{           
+            @extend %abs, %w-100, %top-0, %left-0, %h-0,%transition2;
+            background-image: url("..//..//..//img/home-1/feture/bg/bg.jpg");
+            z-index: -1;            
+        }       
+        &:hover{
+            box-shadow: none;
+            .icon{
+                img{
+                    transform: rotateY(180deg);
+                }
+            }            
+            .text{
+                h6{
+                    @extend %main-color, %transition;
+                }
+                p{
+                    @extend %white-color, %transition;
+                }
+            }
+            &:after{
+                @extend %h-100, %transition2;
+            } 
+        }
+        &--innerpage2{
+            @include padding(0);  
+            box-shadow: none;     
+            .icon{
+                @extend %width-ih-im,%height-ih-im, %bgtransprant-im, %mar-ih-im, %text-left;
+            }
+            .text{
+                @include margin-top(10px);  
+                h6{
+                    @extend %white-color, %text-left;
+                    @include margin-bottom(10px);
+                }
+                p{
+                    @extend %white-color, %text-left;
+                    max-width: inherit;
+                }
+            }
+            &:after{
+                @extend %bgtransprant-im;
+            }
+        }
+        &--inneraboutpage{
+            @extend %bg1;
+            .text{
+                h6{
+                 @extend %white-color;
+                }
+                p{
+                @extend %white-color;
+                }
+            }
+        }
+    }    
+    &--feturepage2{
+        @include margin-top(0px);
+        @include padding-block(100px);
+        @extend %bg1;
+    }
+    &--fetureaboutpage{
+       @extend %bgtransprant-im; 
+       @include padding-block(120px);
+    }
+
+    .row{
+        .col-md-6{
+            &:nth-child(2){
+                 .feture__inner{
+                    &:after{
+                        background-image: url("..//..//..//img/home-1/feture/bg/img1.jpg");
+                    }
+                 }
+            }
+            &:nth-child(3){
+                .feture__inner{
+                   &:after{
+                       background-image: url("..//..//..//img/home-1/feture/bg/img2.jpg");
+                   }
+                }
+           }
+           &:nth-child(4){
+            .feture__inner{
+               &:after{
+                   background-image: url("..//..//..//img/home-1/feture/bg/img3.jpg");
+               }
+            }
+       }
+
+        }
+    }
+}
+

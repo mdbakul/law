@@ -1,0 +1,131 @@
+.teamprofile {
+    @include padding(120px 0px);
+
+    &__img {
+        img {
+            @extend %w-100;
+        }
+    }
+    &__allcontent{        
+    background: #F7F7F7;
+    @include padding(20px); 
+    @include breakpoint(xl){
+    @include padding(30px 30px  40px 30px);
+
+    }       
+
+    }   
+
+    &__personalcontent {       
+
+        @include breakpoint(xl){            
+        @include margin-left(50px);
+        }
+        @include breakpoint(max-xl){
+            @include padding(30px 0);
+        }      
+
+        span {
+            @extend %text-500,
+            %font-16,
+            %text-capitalize, %mt-5, %d-inline-block;
+        }
+
+        .data {
+            @include margin-top(30px);
+            >ul {
+                @extend %flex;
+                flex-direction: column;
+                gap:18px;
+                li {
+                    @extend %flex, %align-items-center;
+                    @include breakpoint(max-sm){
+                        flex-direction: column;
+                        align-items: start;
+                    }
+
+                    span {
+                        width: 150px;
+                        @extend %d-inline-block,
+                        %text-color,
+                        %text-600;
+                    }
+
+                    p {
+                        @extend %text-500, %mb-0;
+                    }
+
+                    .allicon {                     
+                       @include breakpoint(max-sm){
+                        @include margin-top(10px);
+                       } 
+                        ul {
+                            @extend %flex;
+                            gap: 10px;
+
+                            li {
+                                a {
+                                    @extend %wd-40,
+                                    %hd-40,
+                                    %bg1,
+                                    %line-height-40;
+                                    @include border-radius(20px);
+                                    @extend %text-center,
+                                    %transition;
+
+                                    i {
+                                        @extend %white-color,
+                                        %font-14;
+                                    }
+
+                                    &:hover {
+                                        @extend %bgtheme,
+                                        %transition;
+                                    }
+
+                                }
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+    &__experience{
+        @include margin-top(30px);
+      h5{
+        @extend %mb-15;        
+      }
+      p{        
+        &:last-child{
+            @extend %mb-0;
+        }
+      }
+
+    }
+    &__year{
+               
+        h5{
+            @extend %mb-15;            
+        }
+        p{
+            
+            &:last-child{
+                @extend %mb-0;
+            }
+        }
+    }
+    &__Guidelines{
+        h5{
+            @extend  %mb-15;
+            
+        }
+        p{
+            @extend  %mb-0;
+        }
+    }
+    &__skillyeaer{
+        @include padding-block(30px); 
+    }
+}

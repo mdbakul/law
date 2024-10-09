@@ -1,0 +1,295 @@
+.team{
+   background-image: url("..//..//img/home-1/team/bg.jpg"); 
+   @extend %bg-cover, %bg-no-repeat;
+   
+   &__inner{
+    @extend %flex, %border-radius-4;
+    @include breakpoint(max-xl){
+    flex-direction: column;
+    
+    }
+    @include padding(30px);
+    @include breakpoint(xl){
+    @include padding(47px);
+    }    
+    @extend %p-rel; 
+    z-index: 1;
+       
+    &:after{
+       @extend %abs, %top-0, %left-0, %bgtheme;
+       width:140px;
+       height: 45px;  
+       z-index: 999;  
+       @include border-radius(4px 0 0 0); 
+       z-index: -1;  
+    };
+    &:before{
+        @extend %abs, %top-0, %left-0, %bgtheme;
+        width:45px;
+        height: 140px;  
+        @include border-radius(4px 0 0 0);  
+        z-index: -1;  
+    }
+    .thum{        
+        width: 150px;
+        height: 150px;
+        @include breakpoint(xl){
+         width: 190px;
+         height: 190px;
+        }        
+        border: 6px solid #fff;   
+        box-shadow: 0px 0px 10px 0px rgba(11, 34, 57, 0.10);      
+        img{
+            @extend %w-100;
+        }
+        @extend %p-rel;
+        &:after{
+            @extend %abs, %wd-15, %hd-15,%bgtheme, %top-100, %left-100, %transition;
+            transform: scale(1);            
+        }
+    }
+    .content{
+        @include breakpoint(max-xl){
+         @include margin-top(30px);
+        }
+        @include breakpoint(xl){
+         width: calc(100% - 190px);
+
+        }
+        @include breakpoint(xl){            
+        @include padding-left(30px);
+        }  
+                    
+        span{
+        @extend %text-400;        
+        }
+        p{
+            @extend %mt-15, %text-400;
+            @include breakpoint(xl){
+             max-width: 260px;
+            }
+        }
+       .allicon{
+        @include margin-top(20px);
+        ul{
+            @extend %flex, %align-items-center;
+            gap: 10px;
+            li{
+                a{
+                    background: #EDF2F6; 
+                    @extend %wd-30, %hd-30, %line-height-30, %d-inline-block, %text-center;
+                    @include border-radius(15px);
+                    i{
+                        @include font-size(14px);
+                        @extend %title-color, %transition;
+                    }
+                    @extend %p-rel;
+                    z-index: 1;
+                    &:after{
+                        @extend %abs, %top-0, %left-0, %w-100, %h-100, %bgtheme, %transition;
+                        @include border-radius(50%);
+                        z-index: -1;
+                        transform: scale(0);
+                    }
+                    &:hover{
+                        &:after{
+                            transform: scale(1); 
+                            @extend %transition;
+                            
+                        }
+                        i{
+                            @extend %white-color, %transition;
+                        }
+                    }
+                }
+            }
+        }
+       } 
+    }
+
+    &:hover{
+        .thum{
+            &:after{
+                transform: scale(0);   
+            }
+        }
+        .content{
+            h6{             
+               a{
+                @extend %theme; 
+               }
+            }
+        }
+    }
+   }
+   &__header{    
+    @extend %text-center;  
+    h3{
+       @include line-height(48px); 
+    }  
+   }
+}
+
+
+
+.team2 {      
+    @include padding-block(120px);    
+
+    &__inner {
+        @extend %p-rel,
+        %border-radius-4, %hidden;
+
+        .thum {
+            img {
+                @extend %border-radius-4,
+                %w-100;
+            }
+        }        
+
+        &:hover {
+            .team2__content {
+                @extend %bottom-0, %transition;
+                .contentinner {
+                    &:after{
+                        @extend %h-100, %transition2;
+                    }
+                    .socialicon {
+                        @extend %opacity-1, %visi-visiable, %transition2;
+                        transform: translateY(0) scaleY(1);
+                    }
+                }
+            }
+            .team2__content--contentTeampage{
+                margin-bottom: 10px;
+                .contentinner{
+                    height: 140px;
+                    @extend %transition2;
+                    h4 a {
+                        @extend %white-color-im;
+                    }
+                    p{
+                        @extend %white-color;
+                    }
+                }
+             }   
+        }
+        &--inner2{
+           @include border-radius(0); 
+           .thum {
+               img {
+                @include border-radius(0);                 
+            }
+        } 
+        }             
+    }
+
+    &__content {
+        @extend %text-center,
+        %abs,        
+        %left-50,
+        %w-100, %transition2, %bg1;
+        transform: translateX(-50%);
+        bottom: -35px;
+        @extend %text-600, %hidden,%text-capitalize;
+        .contentinner {
+            @include padding(20px);
+            @extend %p-rel, %w-100,%hidden, %bottom-0, %transition;            
+            height: 140px;
+            &:after {
+                @extend %abs,
+                %w-100,
+                %h-0,
+                %bgtheme,
+                %left-0,
+                %bottom-0,%hidden,%transition2;
+                @include border-radius(0 0 4px 4px);
+                z-index: -1;
+            } 
+            h6{
+                a{
+                    @extend %white-color, %mb-5, %d-inline-block;
+                }
+            }           
+
+            p {
+                @extend %white-color,
+                %mb-10;
+            }
+
+            .socialicon {
+                @extend %opacity-0, %visi-hidden, %transition2;
+                transform: translateY(100px) scaleY(0);
+                ul {
+                    @extend %flex,
+                    %justify-center;
+
+                    li {
+                        margin-right: 12px;
+
+                        &:last-child {
+                            @extend %mr-0;
+                        }
+
+                        a {
+                            i {
+                                @extend %white-color;
+                                @include font-size(18px);
+                            }
+                        }
+                    }
+                }
+                &.socialicon2{
+                    ul{
+                        li{
+                            a{
+                                @extend %wd-35, %hd-35, %line-height-35, %d-inline-block, %transition;
+                                @include border-radius(20px); 
+                                &:hover{
+                                @include border-radius(0px);  
+                                }                                                               
+                            }
+                            &:nth-child(1){
+                                a{
+                                 background: $google !important;
+                                }
+                            }
+                            &:nth-child(2){
+                                a{
+                                    background: $linkedin !important;
+                                }
+
+                            }
+                            &:nth-child(3){
+                                a{
+                                    background: $instagram !important;
+                                }
+
+                            }
+                            &:nth-child(4){
+                                a{
+                                    background: $dribble !important;
+                                }  
+
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+        &--contentTeampage{            
+            max-width: 450px;
+           @include breakpoint(sm){
+            max-width: 300px;
+           }
+           @extend  %border-radius-4;
+           bottom: 10px;
+            .contentinner{
+              height: 100px;
+            }           
+
+        }
+    }
+    
+}
+

@@ -1,0 +1,167 @@
+.case-single{
+    @include padding(120px 0);
+   &__caselist{
+    h6{
+       background-color: #F1F1F1; 
+       @include padding(20px);
+    }
+    >ul{
+        >li{    
+         @include padding(20px 50px 20px 20px);  
+         @extend %flex, %justify-between, %align-items-center;
+         background: #F9F9F9; 
+         border-bottom:1px solid #e1e1e1;     
+          .text{
+            @extend %flex, %align-items-center;
+            i{
+                @extend %mr-10;
+            }
+            h6{
+                @extend %mp-0-im, %bgtransprant, %text-500, %mainfont;
+                @include font-size(16px);
+                a{
+                   @extend %mp-0-im, %text-400, %mainfont, %pcolor;
+                   @include font-size(16px);                   
+                }
+            }
+          }  
+          .number{
+            span{
+                @extend %pcolor;
+                @include font-size(16px);
+            }
+          }
+          &:last-child{
+            @extend %border-none;
+          }
+          @extend %p-rel;
+          z-index: 1;
+          &:after{
+            @extend %abs, %top-0, %left-0, %w-100, %h-100;
+            @extend %bgtheme, %transition;
+            transform: scaleX(0);
+            z-index: -1;
+          }
+
+          &:hover{
+            &:after{
+             transform: scaleX(1);
+             
+            }
+            .text{
+                h6{
+                    a{
+                        @extend %white-color;
+                    }
+                }
+
+            }
+          }
+        }
+    }
+    &--caselistshoppage{
+        >ul{
+            li{
+             background: #fff !important;   
+            }
+        }
+    }
+   }
+   &__advisor{
+       @include margin-top(30px);
+       >h6{
+           background-color: #F1F1F1; 
+           @include padding(20px);
+        }
+        .advisor-bottom{
+            background: #FAFAFA;
+            @include padding(30px);
+            .pic{
+                img{
+                    @extend %w-100;
+                }
+            }
+            .profile{
+                @include margin-top(30px);
+                span{
+                   @extend %mt-5, %d-inline-block; 
+                }
+                p{
+                    @extend %mt-10;
+                    max-width: 300px;
+                }
+                .socialicon{ 
+                    @include margin-top(20px);
+                    ul{
+                        @extend %flex, %align-items-center;
+                        gap: 10px;
+                        li{
+                            a{
+                                i{
+                                    @extend %pcolor;
+                                }
+                            }
+                        }
+                    }
+                }
+                
+            }
+            
+        }
+   } 
+   &__details{
+    @include padding(30px);
+    background: #FAFAFA;
+    .item{
+        @include margin-bottom(40px);
+        .thumb{
+            img{
+                @extend %w-100;
+            }
+        }
+        .text{
+            @include margin-top(20px);  
+            h2,h4{
+                @extend %mb-10;
+            }
+            
+            .para{                
+                p{
+                @include margin-top(20px); 
+                }
+            }
+        }
+        &:nth-child(3),
+        &:nth-child(4){   
+            .top{
+                h4{
+                    @extend %mb-10;  
+                }
+            }         
+            .bottom{
+                @include margin-top(30px);
+                .left{
+                    ul{
+                        @include padding-left(20px);
+                        li{
+                            list-style: disc;
+                            @include margin-bottom(18px);
+
+                            &:last-child{
+                                @extend %mb-0-im;
+                            }
+                        }
+                    }
+                }
+                .right{                    
+                    img{
+                        @extend %w-100;
+                    }
+                }
+
+             }
+        }        
+
+    }
+   }   
+}

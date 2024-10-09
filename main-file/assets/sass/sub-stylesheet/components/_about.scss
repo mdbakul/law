@@ -1,0 +1,232 @@
+.about{
+    @include margin-top(120px);
+  
+   // left part   
+    &__content{
+    @include margin-top(20px);
+    ul{
+        li{
+            @include margin-bottom(25px);
+            .title{
+                @extend %flex, %align-items-center;
+                gap: 8px; 
+                .icon{
+                    width: 30px;
+                    height: 20px;
+
+                }                            
+            }
+            .text{
+                @include margin-top(10px);
+                p{
+                    max-width: 390px;
+                }
+            }
+            &:last-child{
+                @extend %mb-0;
+            }
+        }
+    }
+   } 
+   &__btn{
+    @include margin-top(45px);
+    @extend %flex;
+    gap: 15px;
+    a{
+     padding-inline: 3rem;  
+    }
+   }
+
+   &__header{
+    h6{
+        @extend %text-left;
+    }
+    h3{
+        @include margin-bottom(25px);
+    }
+    p{
+       max-width: 580px;
+
+    }
+   }
+
+// right part
+
+   &__righpart{
+        @include breakpoint(xl){
+            @include margin-left(80px); 
+       }     
+   }
+   &__rightinner{
+    @extend %p-rel, %hidden;
+    img{
+        @extend %w-100;
+      }
+      .innertext{
+        @extend %abs, %transition2;
+        left: 35px;
+        top: -120px;
+        z-index: 10;
+        img{
+            width: 50px;
+            height: 50px;
+        }
+        h6{
+            @extend %text-700, %white-color, %text-capitalize, %mainfont;
+            width: 153px;
+            @include margin-top(13px);
+        }
+      }
+   }
+   &__rightbottom{
+    @extend %p-rel;
+    &:after{
+        @extend %abs, %top-0, %left-0, %w-100, %h-0, %transition2;
+        background: rgba(31, 50, 92, 0.70); 
+    }
+    &:hover{
+       .about__rightinner{
+        .innertext{
+            top: 110px;
+            @extend %transition2;
+        }
+       } 
+       &:after{
+        @extend %h-100, %transition2;
+       }
+    }
+   }
+
+
+// page two start here
+   &--aboutpage2{
+    background-image: url("../../../../assets/img/home-2/about/mainbg.jpg");
+    @extend %p-rel, %bg-cover, %bg-no-repeat;
+    @include margin-top(0px);
+    @include padding-block(120px);    
+     .row{
+        flex-direction: row-reverse;
+     }
+   } 
+   
+//about page start here
+
+    &--aboutmainpage{
+    @extend %bgtransprant, %bg1; 
+    @include padding(120px 0);
+
+    .row{
+        flex-direction: row-reverse;
+     }  
+    }    
+
+}
+
+
+// page two start here
+.about2 {
+   @extend %bg1;
+    @include padding(120px 0 200px 0);    
+    &__leftinner {
+        @extend %p-rel;
+        .exbutton {
+            @extend %bgtheme,
+            %d-inline-block,
+            %transition,
+            %abs;
+            top: 60%;
+            left: 70%;         
+
+
+            @include padding(12px 25px);
+            @include border-radius(4px);
+
+            span {
+                @extend %d-block,
+                %white-color,
+                %text-600;
+                @include line-height(30px);
+                @include font-size(28px);
+
+            }
+
+            animation: aboutanimation 5s infinite;
+
+            @keyframes aboutanimation {
+                0% {
+                    left: 0;
+                    @extend %transition;
+                }
+
+                50% {
+                    left: 50px;
+                    @extend %transition;
+                }
+
+                100% {
+                    left: 0;
+                    @extend %transition;
+                }
+
+            }
+        }
+    }
+    &__rightcontent {
+        .allparag {           
+            p {                
+                @extend %text-500, %white-color,
+                %d-inline-block;               
+                &:last-child{
+                @include margin-block(30px);
+                }            
+            }
+        }
+        .aboutinner {
+            @extend %flex;
+            gap: 30px; 
+            border-bottom: 1px solid #fff;
+            @include padding-bottom(40px); 
+            @include margin-bottom(40px);         
+            .aboutitem {
+                @extend %flex,
+                %align-items-center; 
+                gap: 15px;                
+                .icon {
+                    @extend %wd-60,
+                    %hd-60,
+                    %bgtheme,
+                    %text-center;
+                    line-height: 60px;
+                    @include border-radius(30px);
+                }
+                .text{
+                    width: calc(100% - 75px);
+                    h6{
+                        @extend %white-color;
+                        @include margin-bottom(10px);
+                    }
+                    p{
+                        @extend %white-color;
+                        @include breakpoint(sm){
+                            max-width: 190px;
+                        }
+                    }
+                }
+
+                
+            }
+        }
+        
+    }
+    &__btn{
+        a{
+            padding-inline: 3rem;  
+        }
+    }    
+    .row{        
+        @include breakpoint(max-lg){
+            flex-direction: column-reverse;
+        }    
+    }
+}
+

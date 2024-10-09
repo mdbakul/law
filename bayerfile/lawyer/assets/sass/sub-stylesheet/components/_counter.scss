@@ -1,0 +1,37 @@
+.counter {
+    background-image: url("..//..//img/about/counter/mainbg.jpg");
+   @extend %bg-cover, %bg-no-repeat;
+
+    &__inner {
+        @extend %text-center;
+        .thumb {
+            @extend %wd-100, %hd-100, %line-height-100, %text-center;
+            @include border-radius(50%);
+            @extend %bgtheme, %auto;
+            @include margin-bottom(20px);          
+            
+        }
+    }
+
+    &__content {
+        .maincounter{
+            @extend %flex,
+            %align-items-center,
+            %justify-center;
+            h3 {
+                @extend %white-color, %mainfont;               
+            }
+            span {
+                @extend %white-color,
+                %mb-0,
+                %text-700;
+                @include font-size(30px); 
+            }
+        }         
+        h6{
+            @extend %white-color;
+            @include margin-top(10px);
+        }             
+    }   
+
+}

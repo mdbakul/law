@@ -1,0 +1,126 @@
+.blog { 
+    background-image: url("..//..//img/home-1/blog/bg.jpg"); 
+    @extend %bg-cover, %bg-no-repeat;  
+    @include padding(115px 0 120px); 
+    
+    &__inner {
+        @extend %bg-white;
+        &:hover{        
+        .blog__content{
+            .blogtext{
+                h6{
+                    a{
+                     @extend %theme;   
+                    }
+                }
+            }
+        }
+        .blog__thum{
+            img{
+                @include transform(scale(1.1));                
+            }
+          } 
+        }  
+     &--innerpage2{
+        @extend %bgtransprant-im;
+          .thumb{
+            @extend %hidden;
+            img{
+                @extend %w-100;
+                @include border-radius(8px);
+            }
+          }
+          .text{  
+            @include padding-top(30px);          
+            h5{
+              a{
+                @extend %white-color;    
+                max-width: 350px; 
+              }        
+            }
+            p{
+                @extend %white-color; 
+                @include margin-block(15px);
+            }
+            a{
+                @extend %white-color, %text-700; 
+            }
+          }
+
+          &:hover{
+            .thumb{
+                a{
+                  img{
+                    transform: scale(1.1);
+                  }
+                }
+            }
+
+            .text{
+                h5{
+                    a{
+                        @extend %theme;                   
+                    }
+                }
+                a{
+                    @extend %theme;  
+                }
+            }
+          }
+       }         
+    }
+    
+    &__thum {
+        @include padding(20px);
+        a{
+            @extend  %hidden, %d-inline-block, %w-100;
+            img{
+                @extend %w-100;
+            }
+        }        
+    }
+    
+    &__content {
+        @include padding(0px 30px 40px 30px);
+        @include breakpoint(lg){
+         @include breakpoint(max-lxxl){
+        @include padding(0px 13px 40px 13px);
+          }
+        }
+        .blogtop{
+            @extend %mb-15, %pb-15;
+            border-bottom: 1px solid #EDF2F6;
+            ul{
+            @extend %flex, %justify-between;
+                li{
+                @extend %font-16, %text-400;
+                color: #555; 
+                    i{
+                        @extend %mr-10, %theme, %font-18;
+                        
+                    }
+                }
+            }
+        }
+        .blogtext{
+            a{                               
+            @extend  %d-inline-block, %transition, %text-capitalize;
+            @include line-height(34px);            
+            }            
+        }       
+                
+    } 
+
+    &__header{
+        @extend %text-center;
+    }
+    
+    // blog page two start here
+
+    &--blogpage2{
+        @extend %bg-img-none-im;
+        @extend %bg1;
+    } 
+
+   
+}

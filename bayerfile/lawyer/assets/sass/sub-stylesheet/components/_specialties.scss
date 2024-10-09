@@ -1,0 +1,53 @@
+.specialties{
+    background-image: url("../../../../assets/img/home-2/specialties/mainbg.jpg");
+    @extend %bg-cover, %bg-no-repeat;
+
+    &__inner{
+        @extend %bg1, %text-center, %p-rel, %transition2;
+        z-index: 1;
+        @include padding(30px);
+        @include breakpoint(md){
+        @include padding(50px);
+        }
+        @include border-radius(8px);        
+        .thumb{
+            @extend %wd-80,%hd-80, %auto;
+        }
+        .content{
+           .maincounter{
+            @include margin-block(15px);
+            h5{
+               @extend %mainfont,%theme-im; 
+            }            
+            span {
+                @include font-size(20px);
+                @extend %theme, %text-700, %mainfont;
+            }
+           } 
+           h6{
+            @extend %white-color;
+           }
+        }
+        &:after{
+            @extend %abs, %top-0, %left-0, %w-100, %transition2, %h-100;
+            background-image: url("../../../../assets/img/home-2/specialties/img1.jpg");
+            @extend %bg-cover, %bg-no-repeat;
+            transform: scale(0);                  
+
+            z-index: -1;
+            @include border-radius(8px);  
+        }
+        &:hover{
+        @include border-radius(0px); 
+        &:after{               
+            @include border-radius(0px);   
+            transform: scale(1);       
+        }       
+
+        }
+    }  
+    &__header{
+        @extend %text-center;
+    }
+
+}

@@ -1,0 +1,62 @@
+.fanfact {
+    background-image: url("..//..//..//img/home-1/fanfact/bg/mainbg.jpg");
+    @extend %bg-no-repeat,
+    %p-rel,
+    %bg-cover;
+    @include padding(120px 0 110px 0); 
+    &__inneritem {
+        @extend %flex;
+        flex-direction: column;
+        gap: 15px; 
+        @include breakpoint(md){
+        flex-direction: row;
+        align-items: center;
+        }
+        .thum {
+            @extend %wd-55, %hd-55, %border-radius-4, %bg1, %text-center, %line-height-55;            
+            
+        }
+
+        .content {
+            .maincounter {
+                @extend %flex, %align-items-center;
+                h6 {                    
+                    @extend %mb-0, %title-color, %mainfont, %text-500;
+                }
+                span {
+                    @include font-size(20px);
+                    @extend %title-color, %text-500, %mainfont;
+                }
+            }
+            p {
+                @extend %text-700, %mb-0, %font1, %title-color;
+            }
+        }
+        
+    }
+
+    &__btn {
+        @extend %flex;
+        gap: 30px;
+        align-items: flex-start;
+        @include margin-top(50px);      
+        
+    } 
+       
+    &__header{
+        @include margin-bottom(40px);
+        h6{
+            @extend %text-left;
+        }
+    }   
+
+    &__bottomimg{
+        @extend %abs, %bottom-0;
+        left: 2%;
+              
+            
+        
+    }
+    
+}
+

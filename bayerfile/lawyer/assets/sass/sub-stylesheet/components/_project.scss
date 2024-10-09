@@ -1,0 +1,215 @@
+.project{
+    @extend %bg1;
+
+    &__header{
+        h6{
+            @extend %text-left;
+        }
+        p{
+            @extend %text-400;
+            max-width: 349px;
+        }
+        a{
+            @include margin-top(40px);
+        }
+    }     
+    
+    &__item{
+        @extend %p-rel, %hidden;
+       .thumb{        
+        img{
+            @extend %w-100;
+            @include border-radius(8px);
+        }
+       } 
+       &:after{
+        @extend %abs, %left-0, %bottom-0, %bgtheme, %w-100, %transition;
+        height:0px; 
+        @include border-radius(0 0 4px 4px);
+        
+       }
+       &:hover{
+        .project__content{
+            @extend %bottom-0, %transition2;            
+
+        }
+        &:after{
+            height: 100px;
+            @extend %transition2;
+        }
+       }
+    }
+
+    &__content{
+        @extend %abs, %left-0, %w-100,%transition;
+        bottom: -100px;  
+        @include padding(30px);            
+        .contentinner{
+            @extend %flex, %align-items-center,%justify-between;            
+            .text{                
+                p{
+                    @extend %white-color;
+                }
+                h6{
+                   a{
+                    @extend %white-color;
+                   }
+                }
+            }
+            .link{                
+                a{
+                    @extend %wd-50, %hd-50, %bg-white, %d-inline-block, %line-height-50, %text-center, %transition2;
+                    @include border-radius(50%);
+                    i{
+                        @extend %theme, %transition2;
+                    }
+                    &:hover{
+                        @include border-radius(0%);
+                        i{
+                            transform: rotate(180deg);
+                            @extend %transition2;
+                        }
+                    }
+                }
+            }
+
+        }    
+    }  
+
+}
+
+.project2 {
+    @include padding(120px 0);   
+
+    &__heading {
+        @include margin-bottom(50px);
+    }
+
+    &__inner {
+        @extend %p-rel,
+        %border-radius-4,
+        %hidden;
+
+        &:after {
+            @extend %abs,
+            %bottom-0,
+            %left-0,
+            %w-100,
+            %h-0,
+            %transition2,
+            %hidden, %bgtheme;  
+            transform:scaleX(0);         
+            
+        }
+
+        .content {
+            @extend %abs,
+            %left-0,
+            %w-100,
+            %transition2,
+            %opacity-0,
+            %visi-hidden,
+            %bottom-0,
+            %hidden;
+            @include padding(30px 20px);
+
+            @include breakpoint(xxxxl) {
+                @include padding(30px);
+            }
+
+            transform: translateY(100px);
+            .content-inner {
+                @extend %flex,
+                %justify-between,
+                %align-items-center;
+
+                .lefttext {
+                    p {
+                        @extend %white-color, %text-600, %mb-0;
+                                                
+                    }
+
+                    h4 a {
+
+                        @extend %white-color,%text-600,
+                        %text-capitalize;
+                        @include font-size(24px);                      
+
+                        @include line-height(24px);
+
+                    }
+                }
+
+                .rightbtn {
+                    @include breakpoint(md){
+                        @include breakpoint(max-xl){
+                            @include margin-top(10px);
+                        }
+                    }
+                    a {
+                        @extend %p-rel,
+                        %wd-55,
+                        %hd-55,
+                        %d-inline-block,
+                        %theme,
+                        %line-height-50, %bg-white, %text-center;
+                        transition: all .3s ease;
+                        @include border-radius(50px);                                
+
+                    }
+                }
+            }
+        }
+
+        .thum {
+            @extend %border-radius-4;
+            img {
+                @extend %w-100;
+            }
+        }
+
+        &:hover {
+            &:after {
+                @extend %transition2; 
+                height: 110px;
+                transform:scaleX(1);   
+            }
+
+            .content {
+                @extend %transition2,
+                %opacity-1,
+                %visi-visiable;
+                transform: translateY(0);                
+            }
+        }        
+    } 
+    
+    &__header {
+        @include margin-bottom(40px);
+        ul {
+            @extend %flex,
+            %justify-center,
+            %align-items-center;
+            gap: 20px;
+            li {
+                background: #FFF8EF;
+                @include padding(10px 15px);
+
+                @include breakpoint(sm) {
+                    @include padding(10px 30px);
+                }
+
+                @include border-radius(4px);
+                @extend %text-600,
+                %text-color,
+                %pointer, %text-capitalize;
+                &.active {
+                    @extend %bgtheme,
+                    %white-color;
+                }
+            }
+        }
+    }
+    
+
+}

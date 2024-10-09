@@ -1,0 +1,132 @@
+.portfoliosingle {
+    &__body {
+        @include padding(30px);
+        background: #F7F7F7;
+
+        .thum {
+            @extend %text-center;
+
+            img {
+                @extend %w-100,
+                %text-center;
+            }
+        }
+
+        .content {
+            .top-content {                
+                @include breakpoint(xl){
+                    display: flex;
+                }
+                .left {
+                    @include breakpoint(xl){
+                    width: calc(100% - 520px);
+                    }
+                    @include margin-top(40px);
+                    h4{
+                        @extend %mb-5;
+                    }
+                    p {
+                        @include breakpoint(xl){
+                        max-width: 550px;
+                        }                        
+                        &:last-child{
+                            @extend %mt-30;
+                        }
+                    }
+
+                    
+                }
+                .right {
+                    @include breakpoint(md){
+                        width: 500px;   
+
+                    }                 
+                    border: 1px solid #F2F6F9;
+                    @include margin-top(30px);  
+                    @include breakpoint(xl){
+                     @include margin-top(-80px);  
+                     @include margin-right(20px);
+
+                    }                 
+                    h4 {                 
+                        @extend %theme, %mb-10;       
+                        @include padding(20px 40px 20px 40px);                        
+                        border-bottom: 1px solid #F2F6F9; 
+
+                    }
+                    ul {
+                        @extend %flex, %align-items-center;   
+                        @include breakpoint(sm){
+                         justify-content: space-between
+                        } 
+
+                        li {   
+
+                        
+                            @extend %text-left, %w-100, %mb-10, %pb-10;
+                            @include breakpoint(esmm){
+                                width: 50%;
+                                @include margin-bottom(20px);
+                                @include padding-bottom(20px);
+                            }
+                
+                            border-bottom: 1px solid #F2F6F9;  
+                            @include padding-inline(20px);
+                            @include breakpoint(sm){
+                            @include padding-inline(40px);                            
+                            }                       
+
+                            span {
+                                @extend %theme, %text-400;
+                                @include line-height(30px);
+
+                            }
+                            p {
+                                @extend %text-800, %text-color, %mb-0;
+                            }
+
+                            &:nth-child(even){
+                                @include padding-left(40px);
+                            }
+                            &:nth-child(5){
+                                @include breakpoint(esmm){
+                                    border-bottom: none !important; 
+
+                                }                       
+                               
+                            }
+                            &:nth-child(6){
+                                border-bottom: none !important;
+                                // @extend %mb-0-im, %pb-0-im;
+                            }
+                        }
+                    }
+                }
+            }
+            .bottom-content{
+                @include margin-top(30px);
+                @include breakpoint(xl){
+                    @include margin-top(0);
+                }
+                .item-two,
+                .item-one{  
+                    h4{
+                        @extend %mb-5;
+                    } 
+
+                    P{                      
+                        max-width: 1085px; 
+                        &:last-child{
+                            @extend %mb-0;
+                        }
+                    }
+                }
+                .item-two{
+                    @include margin-top(30px); 
+
+                }
+            }
+        }
+    }
+}
+
